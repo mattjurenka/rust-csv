@@ -1,0 +1,6 @@
+project: rust-csv
+target: writer
+duration: 90
+
+cmds:
+    - cmd: /fuzz_writer

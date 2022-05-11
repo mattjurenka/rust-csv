@@ -1,0 +1,6 @@
+project: rust-csv
+target: reader-serde
+duration: 90
+
+cmds:
+    - cmd: /fuzz_reader_serde

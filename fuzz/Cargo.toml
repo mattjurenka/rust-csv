@@ -1,0 +1,51 @@
+[package]
+name = "csv-fuzz"
+version = "0.0.0"
+authors = ["mattjurenka"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+serde = "1.0.137"
+serde_derive = "1.0.137"
+
+[dependencies.csv]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "fuzz_reader"
+path = "fuzz_targets/fuzz_reader.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_reader_serde"
+path = "fuzz_targets/fuzz_reader_serde.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_reader_nohead"
+path = "fuzz_targets/fuzz_reader_nohead.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_reader_delim"
+path = "fuzz_targets/fuzz_reader_delim.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_writer"
+path = "fuzz_targets/fuzz_writer.rs"
+test = false
+doc = false

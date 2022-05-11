@@ -4,6 +4,7 @@ tags
 examples/ss10pusa.csv
 build
 target
+fuzz/target
 Cargo.lock
 scratch*
 bench_large/huge
